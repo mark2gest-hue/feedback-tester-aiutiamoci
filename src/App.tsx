@@ -237,18 +237,15 @@ export default function App() {
           </div>
         </div>
 
-        <button
-          onClick={() => setShowAdmin(!showAdmin)}
-          className="text-xs text-neutral-400 hover:text-neutral-200 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-neutral-800 hover:border-neutral-700 transition"
-        >
-          {showAdmin ? <RotateCcw className="w-3.5 h-3.5" /> : <Lock className="w-3.5 h-3.5 text-blue-400" />}
-          <span>{showAdmin ? 'Torna al Test' : 'Area Riservata Risultati'}</span>
-          {allSubmissions.length > 0 && (
-            <span className="ml-1 bg-blue-500/20 text-blue-300 px-1.5 py-0.5 rounded text-[10px] font-bold">
-              {allSubmissions.length}
-            </span>
-          )}
-        </button>
+        {showAdmin && (
+          <button
+            onClick={() => setShowAdmin(false)}
+            className="text-xs text-neutral-400 hover:text-neutral-200 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-neutral-800 hover:border-neutral-700 transition"
+          >
+            <RotateCcw className="w-3.5 h-3.5" />
+            <span>Torna al Test</span>
+          </button>
+        )}
       </header>
 
       {/* DASHBOARD ADMIN */}
@@ -700,9 +697,18 @@ export default function App() {
         </main>
       )}
 
-      {/* Footer */}
-      <footer className="border-t border-neutral-900 py-3 text-center text-[11px] text-neutral-600">
-        Piattaforma di Feedback & Testing Riservato © Aiutiamoci • Mark 2.0
+      {/* Footer discreto con trigger nascosto */}
+      <footer className="border-t border-neutral-900/60 py-3.5 px-4 flex items-center justify-between text-[11px] text-neutral-600">
+        <span>Piattaforma di Feedback & Testing Riservato © Aiutiamoci</span>
+        
+        {/* Trigger discreto: una piccola icona lucchetto quasi trasparente */}
+        <button
+          onClick={() => setShowAdmin(true)}
+          title="Riservato"
+          className="text-neutral-700 hover:text-neutral-500 transition p-1 rounded opacity-50 hover:opacity-100"
+        >
+          <Lock className="w-3 h-3" />
+        </button>
       </footer>
     </div>
   );
