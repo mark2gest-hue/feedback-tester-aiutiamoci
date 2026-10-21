@@ -21,15 +21,15 @@ import {
 
 export default function App() {
   const [testerName, setTesterName] = useState('');
-  // Selezione corsi seguiti da parte del tester
+  // Selezione corsi seguiti da parte del tester (default solo Base)
   const [selectedCourses, setSelectedCourses] = useState<{
     base: boolean;
     pro: boolean;
     cyber: boolean;
   }>({
     base: true,
-    pro: true,
-    cyber: true,
+    pro: false,
+    cyber: false,
   });
 
   const [isStarted, setIsStarted] = useState(false);
