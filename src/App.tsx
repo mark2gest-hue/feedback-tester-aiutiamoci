@@ -228,9 +228,11 @@ export default function App() {
       {/* Header */}
       <header className="border-b border-neutral-800/80 bg-neutral-900/40 backdrop-blur-md sticky top-0 z-20 px-4 py-3.5 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
-            <ShieldCheck className="w-4 h-4" />
-          </div>
+          <img
+            src="/images/logo_icon_dark.png"
+            alt="Aiutiamoci Logo"
+            className="w-8 h-8 rounded-lg object-contain shadow-sm border border-neutral-800"
+          />
           <div>
             <span className="text-xs uppercase tracking-wider font-semibold text-blue-400">Aiutiamoci — Beta Testing</span>
             <h1 className="text-sm font-semibold text-neutral-200">Valutazione Percorso Corsi AI</h1>
@@ -362,8 +364,12 @@ export default function App() {
         /* SCHERMATA INTRODUTTIVA CON SELEZIONE CORSI */
         <main className="flex-1 flex items-center justify-center p-4">
           <div className="max-w-md w-full bg-neutral-900/80 border border-neutral-800 rounded-2xl p-6 md:p-8 shadow-2xl text-center backdrop-blur-xl">
-            <div className="w-14 h-14 mx-auto rounded-2xl bg-blue-600/15 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4">
-              <Sparkles className="w-7 h-7" />
+            <div className="flex justify-center mb-5">
+              <img
+                src="/images/logo_full_dark.png"
+                alt="Aiutiamoci Formazione AI"
+                className="h-10 object-contain drop-shadow-md"
+              />
             </div>
             <h2 className="text-xl font-bold tracking-tight text-neutral-100">
               Il tuo Feedback è Prezioso
